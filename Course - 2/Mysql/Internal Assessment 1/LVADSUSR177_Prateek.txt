@@ -1,0 +1,65 @@
+-- 1
+select customerID, dataused from customerinteractions 
+where DataUsed > (select avg(dataused) from customerinteractions where month = 'March');
+
+-- 2
+select customerID from customerinteractions where 
+(select AVG(callduration) from customerinteractions where month = 'March') > 
+(select AVG(callduration) from customerinteractions where month = 'February');
+
+
+-- 3
+select customerID, messagecount, callduration from customerinteractions where
+MessageCount > (select AVG(messagecount) from customerinteractions where month in( 'March', 'February')
+and 
+callduration < (select AVG(callduration) from customerinteractions where month in ('March', 'February'));
+
+-- 4
+
+select totalSalesAmount, ProductTypeID from quarterlysales where ProductTypeID = 1;
+
+-- 5'
+
+select producttypeID, max(totalSalesAmount) from quarterlysales where quarter = 'Q1' ;
+
+-- 6
+
+select AVG(totalsalesamount/unitssold) FROM quarterlysales 
+where ProductTypeID = 1 and quarter = 'Q2';
+
+-- 7
+
+select region, EnergySource, ConsumptionKWh from sectorenergyconsumption 
+where ConsumptionKWh > (select avg(consumptionkwh) from sectorenergyconsumption) 
+and 
+EnergySource in ('Solar', 'Wind');
+
+-- 8
+
+select sector from sectorenergyconsumption 
+where ConsumptionKWh > (select avg(consumptionkwh) from sectorenergyconsumption);
+
+-- 9'
+
+select (select consumptionkwh  from sectorenergyconsumption where energysource = 'Fossil Fuels') - 
+(Select sum(consumptionkwh) from sectorenergyconsumption where energysource <> 'Fossil Fuels') 
+from sectorenergyconsumption;
+
+
+-- 10
+
+select customerName from insuranceactivities where 
+claimscount > ( select avg(claimscount) from insuranceactivities) or 
+FeedbackScore > ( select avg(feedbackscore) from insuranceactivities)
+in (select customername from insuranceactivities where investigation = 'No');
+
+-- 11
+
+select sum(annualpremium) from insuranceactivities where 
+FeedbackScore > (select AVG(feedbackscore) from insuranceactivities) and
+ClaimsCount >= 1;
+
+-- 12
+
+select PolicyType, avg(feedbackscore), sum(claimscount) from insuranceactivities 
+group by PolicyType;
