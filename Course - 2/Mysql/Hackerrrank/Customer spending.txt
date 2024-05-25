@@ -1,0 +1,13 @@
+Customer spending
+SELECT
+     c.customer_name, ROUND(SUM(i.total_price)*1.000000, 6)
+FROM 
+     customer c
+INNER JOIN
+     invoice i ON c.id=i.customer_id
+GROUP BY
+     c.customer_name
+HAVING 
+     SUM(i.total_price)<0.25*(SELECT AVG(total_price) FROM invoice)
+ORDER BY
+      SUM(i.total_price) DESC;

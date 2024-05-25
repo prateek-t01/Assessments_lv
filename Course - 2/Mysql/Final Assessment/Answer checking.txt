@@ -1,0 +1,240 @@
+here are the 20 questions from the SQL exam
+1. As a sales manager at PharmaCo Inc., you want to analyze the average sales amount per product category for the past month. Write a query to calculate the average sales amount per product category for products sold in the last 30 days.
+
+2. You are tasked with identifying the top-selling products in terms of sales revenue for the current year. Write a query to rank products based on their total sales amount and show the top 3 products.
+
+3. As a data analyst at PharmaPlus Ltd., you want to identify the customer segments with the highest sales contribution to revenue. Write a query to calculate the percentage contribution of each customer to total sales revenue and rank customers based on their contribution.
+
+4. Suppose you want to categorize customers based on their purchasing behavior, specifically focusing on whether they have been consistent or occasional buyers. Write a query to classify customers as "Consistent Buyers" if they have made purchases in at least four out of the last six months, and as "Occasional Buyers" otherwise.
+
+5. As a data analyst at XYZ Airlines, you need to calculate the average ticket price for each flight route (departure_airport to arrival_airport). Provide a list of flight routes along with their average ticket prices.
+
+6. The marketing team at ABC Airlines wants to know the total number of tickets sold for each flight in the past month. Write a query to show the  flight number, departure date, and total tickets sold for each flight in descending order of ticket sales.
+
+7. As part of a loyalty program analysis at DEF Airlines, you are required to find the top 5 passengers who have spent the most on tickets in total. Display their names, total amount spent, and frequent flyer status.
+
+8. The revenue department at GHI Airlines wants to identify the busiest travel month based on ticket sales. Write a query to show the month with the highest number of tickets sold, along with the total tickets sold in that month.
+
+9. As the data analyst for an online gaming platform, you are tasked with analyzing player engagement and retention. Write a query to calculate the average playtime (in minutes) per player for each game genre. Show the results in descending order of average playtime.
+
+10. As a marketing analyst, you need to identify the most popular games on your platform based on the number of players who have played them. Write a query to list the top 3 games with the highest number of players, along with the total number of players for each game.
+
+11. As part of your role in game development, you need to analyze the performance of games on your platform. Write a query to calculate the average score and highest score achieved in each game, along with the total number of players who have played each game.
+
+12. As a data scientist working for an online gaming platform, you are tasked with predicting player churn based on their recent activity. Write a query to identify players who have not played any games in the last 30 days but were active players before that period. List these players along with their registration date and the date of their last activity.
+
+14. A hospital wants to analyze the performance of different treatments in terms of revenue generation. Write a query to show the treatment name, total revenue generated from that treatment, and the percentage of total revenue it contributes to all treatments.
+
+15. The hospital administration wants to identify patients who have been readmitted within 30 days of their previous discharge. Write a query to list the patient_id, patient_name, admission_date, and discharge_date for such patients, sorted by admission_date in ascending order.
+
+16. As part of quality improvement initiatives, the hospital wants to analyze the average length of stay (LOS) for patients by gender and diagnosis. Write a query to calculate the average LOS in days, rounded to the nearest whole number, for each combination of gender and diagnosis.
+
+17. As a data analyst at XYZ University, you've been asked to find the average grade per semester for each department. Create a query that displays the department, semester, and average grade for all departments and semesters. Sort the results by department and semester.
+
+18. The admissions team at ABC College wants to know the top 5 majors with the highest number of enrolled students. Write a query to retrieve the major, total number of students enrolled in that major, and the enrollment year. Order the results by the number of students in descending order.
+
+19. The registrar's office at DEF University needs a report on students who have completed at least 50 credits in a single semester. Create a query that shows the student ID, student name, semester, and total credits earned in that semester. Only include students who have completed 50 or more credits in a semester.
+
+20. The university's academic advising office wants to analyze the course enrollment trends over the past five years. They want to know the top 3 most popular courses each year based on the number of students enrolled. Write a query to retrieve the course name, enrollment year, and number of students enrolled for the top 3 courses in each year, sorted by enrollment count in descending order.
+
+
+
+here are their respective sql queries:
+-- 1
+SELECT 
+p.product_category,
+round(avg(sr.sales_amount),2) as average_sales
+from products p
+join sales_records sr
+on p.product_id - sr.product_id 
+where month(sales_date) = 3
+GROUP BY p.product_category;
+
+-- 2
+select 
+p.product_category,
+sr.product_id,
+dense_Rank() over (PARTITION BY p.product_category order by sales_amount ) 
+from sales_records sr
+join products p
+on p.product_id = sr.product_id
+order by sales_amount desc limit 3;
+
+-- 3
+select
+customer_id,
+(cume_dist() over (ORDER BY sales_amount) * 100) as contribution
+from sales_records
+order by customer_id;
+
+-- 4
+select
+distinct customer_id,
+case 
+when month(sales_date) >= 4 then "Consistent Buyer"
+else "Occasional Buyer"
+end as Customer_Classification
+from 
+sales_records;
+
+-- 5
+select 
+concat(departure_airport, " - ", arrival_Airport) as flight_route,
+round(avg(base_price),0) as "average ticket price"
+from flights
+group by flight_route;
+
+-- 6
+select tickets.flight_id, 
+flights.departure_date,
+count(tickets.ticket_price)
+from tickets
+join flights
+using (flight_id)
+group by flight_id;
+
+-- 7
+select
+p.passenger_name,
+p.frequent_flyer_status,
+sum(t.ticket_price) as total_amount_spent
+from passengers p
+left join tickets t
+using (passenger_id)
+group by p.passenger_name, p.frequent_flyer_status;
+
+-- 8
+select month(ticket_date),
+count(ticket_id)
+from tickets
+group by month(ticket_date)
+order by count(ticket_id) desc limit 1;
+
+-- 9
+select
+p.player_id,
+p.player_name,
+g.game_genre,
+(ps.play_date-p.registration_date)*24 as playtime
+from players p
+left join playerscores ps
+using(player_id)
+join games g
+using (game_id)
+-- group by g.game_genre
+order by playtime desc;
+
+-- 10
+select 
+player_id,
+count(game_id) as games_count
+from playerscores
+group by player_id
+order by games_count desc;
+
+
+-- 11
+select 
+game_id,
+games.game_name,
+avg(score) as average_score,
+max(Score) as max_score,
+count(player_id) as player_count
+from playerscores
+left join games
+using (game_id)
+group by game_id
+order by max(score) desc, avg(Score) desc, count(player_id) desc;
+
+-- 12
+select 
+p.registration_date,
+ps.player_id,
+p.player_name,
+ps.play_date
+from playerscores ps
+left join players p
+using(player_id)
+where ps.play_date - p.registration_date > 30;
+
+-- 13
+select
+d.doctor_name,
+sum(t.cost) as total_cost
+from doctors d
+left join treatments t
+using(doctor_id)
+group by doctor_name
+order by total_cost desc;
+
+-- 14
+select
+t.treatment_name,
+t.cost,
+concat(round((cume_dist() over (order by cost)*100),0),"%") as contribution
+from treatments t
+left join patients
+using(patient_id);
+
+-- 15
+select
+patient_id,
+patient_name,
+admission_date,
+discharge_date
+from patients 
+where (discharge_date < admission_date)  and 
+ (discharge_date - admission_date) < 30
+ order by admission_date;
+
+-- 16
+select
+gender,
+diagnosis,
+avg(discharge_date - admission_date) as avg_stay
+from patients
+group by gender, diagnosis;
+
+-- 17
+select 
+c.department,
+e.semester,
+avg(e.grade) over (partition by department, semester ) as avg_grade
+from enrollments e
+join courses c
+using(course_id);
+
+-- 18
+select
+c.department as major,
+(e.course_id) as course_count,
+s.enrollment_year
+from courses c
+left join enrollments e
+using(course_id)
+join students s
+using(student_id);
+
+-- 19
+select 
+e.course_id,
+sum(c.credit),
+e.semester 
+from enrollments e
+left join courses c
+using(course_id);
+
+
+-- 20
+select
+c.course_name,
+s.enrollment_year,
+count(e.enrollment_id) as no_of_students_enrolled
+from courses c
+left join enrollments e
+using (course_id)
+left join students s
+using (student_id);
+
+
+evaluate the answers for the exam questions  based on mistakes,approach and logic used by the students. give marks for each question out of 5

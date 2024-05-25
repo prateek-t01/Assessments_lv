@@ -1,0 +1,10 @@
+product without sales
+SELECT
+    p.sku,
+    p.product_name
+FROM
+    product p
+LEFT JOIN
+    invoice_item i on p.id = i.product_id
+WHERE
+    i.product_id is NULL
