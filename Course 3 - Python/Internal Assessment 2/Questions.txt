@@ -1,0 +1,59 @@
+1. Calculate and print the minimum, maximum, sum, mean, and standard deviation of an array.
+
+2. You're given health data of individuals in a multidimensional NumPy array (attributes like height, weight, age). Write a function that normalizes each attribute to have a mean of 0 and standard deviation of 1, enabling better comparison across different individuals and attributes.
+health_data = np.array([[160, 70, 30], # height, weight, age for individual 1
+[165, 65, 35], # height, weight, age for individual 2
+[170, 75, 40]]) # height, weight, age for individual 3
+
+3. You are given a 2D NumPy array representing scores of students in various subjects throughout the semester. Each row corresponds to a different student, and each column represents a subject. Your task is to calculate the average score in the last three subjects for each student. However, some students have been marked as 'exempt' in certain subjects, with a score of -1. These exempt scores should not be included in the average calculation. How would you approach this task?
+
+4. Analyzing Sensor Data: You're working with sensor data from a network of environmental monitoring devices. You need to create a numpy array to represent temperature readings collected over a day. The readings should start at 15°C and end at 25°C, with 24 equally spaced measurements.
+
+5. Stock Market Analysis: You're a financial analyst analyzing stock market data. You have daily closing prices of a stock stored in a numpy array. You want to compute a moving average over a window of 5 days to smooth out short-term fluctuations.
+import numpy as np
+daily_closing_prices = np.array([100, 102, 98, 105, 107, 110, 108, 112, 115, 118, 120])
+window_size = 5
+
+6. You're working on a machine learning project and need to generate synthetic data for training. You want to create 100 samples from a 2- dimensional normal distribution with a mean vector of [0, 0] and a covariance matrix [[1, 0.5], [0.5, 2]].
+
+7. You're simulating a physical system and need to calculate the determinant of a matrix representing the system's properties. The matrix is a 3x3 square numpy array.
+import numpy as np
+properties_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+8. Create a 3x3 array and use boolean indexing to filter out numbers greater than 5.
+
+9. As an HR analyst in a multinational company, you're tasked with a specific slice of the employee dataset for a report. The dataset includes names, ages, cities, and departments. You need to prepare a list of employees under 45 who are not in the HR department, but only their names and cities should be included in this list.
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace'], 'Age': [25, 30, 35, 40, 45, 50, 55],
+'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Miami', 'Boston'],
+'Department': ['HR', 'IT', 'Finance', 'Marketing', 'Sales', 'IT', 'HR']}
+
+10. A retail chain is conducting a detailed analysis of its sales force efficiency by department. Your task involves more than just aggregating sales data. Determine the average sales per salesperson in each department and rank the departments based on their average sales.
+data = {'Department': ['Electronics', 'Electronics', 'Clothing', 'Clothing', 'Home Goods'],
+'Salesperson': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+'Sales': [70000, 50000, 30000, 40000, 60000]}
+
+11. You're analyzing supermarket data to plan future promotions. You have a dataset of products, categories, and their price points, along with promotion status. Identify products from the 'Fruit' category which are both above average in price for their category and currently not part of any promotion, hinting at potential candidates for future promotions.
+data = {
+'Product': ['Apples', 'Bananas', 'Cherries', 'Dates', 'Elderberries', 'Flour', 'Grapes'],
+'Category': ['Fruit', 'Fruit', 'Fruit', 'Fruit', 'Fruit', 'Bakery', 'Fruit'],
+'Price': [1.20, 0.50, 3.00, 2.50, 4.00, 1.50, 2.00],
+'Promotion': [True, False, True, True, False, True, False]
+}
+
+12. In an organization restructuring effort, you're tasked with aligning project allocations with managerial oversight. Two datasets are at your disposal: one detailing employees, their departments, and managers; the other listing employee project assignments. Perform appropriate operations on the datasets to map each project to its corresponding department and manager, ensuring even unassigned employees are included for a complete departmental overview.
+employee_data = {
+'Employee': ['Alice', 'Bob', 'Charlie', 'David'],
+'Department': ['HR', 'IT', 'Finance', 'IT'],
+'Manager': ['John', 'Rachel', 'Emily', 'Rachel']
+}
+# Dataset of employee project assignments
+project_data = {
+'Employee': ['Alice', 'Charlie', 'Eve'],
+'Project': ['P1', 'P3', 'P2']
+}
+
+13. Sports Team Performance Tracking: Load a dataset containing sports team statistics. Calculate win ratios, average scores per game, and player performance metrics to evaluate team strengths and weaknesses. (Dataset given in github).
+
+14. Customer Loyalty Program Effectiveness: Evaluate the effectiveness of a customer loyalty program by analyzing purchase patterns before and after joining the program. Identify trends and suggest improvements based on data insights. (Dataset given in github).
+
+15. Academic Performance Analysis: Create a report from student grade data to analyze performance trends across different subjects and identify areas where educational support is needed. (Dataset given in github).

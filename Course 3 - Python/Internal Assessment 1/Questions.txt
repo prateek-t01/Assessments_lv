@@ -1,0 +1,28 @@
+Lab Section 1:
+1. Commercial Property Management System: Develop a script for a property management company that calculates the area of various commercial properties (like malls, office spaces) to help with pricing and planning of services. Users should input length and width in meters and receive area calculations that also categorize properties based on size (small, medium, large).
+2. Integrated Health Management App: Design an application that collects user health data including weight and height, calculates BMI, and integrates these metrics into a broader system that tracks and suggests personalized health advice, diet plans, and fitness tracking.
+3. Educational Record System: Construct a Python script that functions within a school management system, using dictionaries to manage student grades across multiple subjects. The system should allow for adding, updating, and retrieving student records, and print reports for each student.
+Lab Section 2:
+4. Content Recommendation Engine: Implement a script for a streaming service that asks users for their age to recommend movies and TV shows categorized into children, teen, adult, or senior collections based on content ratings.
+5. Promotional Email Dispatcher: Write a program that creates a list of even-numbered subscriber IDs from a database to target a specific promotional email campaign for a new product launch.
+6. Corporate Network Security System: Develop a security system for corporate software that requires users to enter a password before accessing sensitive financial documents. The system should persistently ask for the password until it matches the stored secure hash.
+Lab Section 3:
+7. Customer Feedback Analysis Tool: Create a function to analyze
+customer satisfaction from survey data, calculate average scores, and
+generate insights to improve services. The system should handle data
+aggregation and provide actionable feedback to management.
+8. Content Moderation System: Develop a function as part of a larger
+content moderation system in a social media app that counts vowels to
+assess comment quality and filter out low-effort or spammy comments.
+9. Automated Event Reminder: Use the datetime module to build a feature
+within a larger task management app that alerts users to upcoming
+events, deadlines, and important dates, with options to customize how
+and when reminders are sent.
+Lab Section 4:
+10. Robust Financial Calculator: Enhance a financial application used in banking to perform calculations such as loan repayments or savings interest, with robust error handling to ensure the app does not crash during customer interactions.
+11. Online Polling System: Implement a robust input validation system in an online polling app that ensures all entered data is in the correct format, preventing data corruption and ensuring poll integrity.
+12. Scientific Data Processing Tool: Create a tool used in scientific research that performs various calculations, including division. Implement error handling to manage experimental data inputs, ensuring the system handles errors like division by zero gracefully without data loss.
+Lab Section 5:
+13. Automated Reporting System: Write a script that generates daily status reports for a tech company's server uptime and writes these reports to a log file, simulating a part of a larger monitoring system.
+14. Corporate Compliance Review Tool: Script a tool to read from a log file created by the reporting system, meant to ensure compliance with tech industry regulations by regularly reviewing system logs.
+15. Dynamic Content Creation Engine: Expand an existing script to append updates to a daily news briefing file that includes company news, stock performance, and industry news, then read back the full content at the end of each day for review.

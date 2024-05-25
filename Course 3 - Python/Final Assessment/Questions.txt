@@ -1,0 +1,28 @@
+1. Upload and Examine
+a. Upload the dataset
+b. Examine basic information from the dataset using pandas functions to understand its structure and content (e.g., number of rows and columns, types of data [numerical, categorical], checking for missing values, etc.).
+
+2. Data Cleaning:
+a. Check and handle missing values: Assess the extent of missing data and decide whether to fill or drop them, providing reasons for your decision.
+b. Identify and resolve duplicate data entries: Ensure the dataset's integrity by removing any duplicates.
+
+3. Descriptive Statistics:
+a. Analyze measures like mean, median, mode, range, variance, and standard deviation for numerical data. Understand the central tendencies and variability of the data.
+
+4. Data Visualization:
+a. Use various charts and plots (like histograms, scatter plots, box plots, bar charts, pie charts) to visualize data distributions and relationships. This helps in understanding the data's characteristics and spotting trends or anomalies visually.
+
+5. Identifying Relationships:
+a. Explore correlations between different variables using statistical methods and visual tools. This includes examining how different match conditions like toss decisions, innings scores, or venue impact the match outcomes.
+
+6. Outlier Detection:
+a. Identify outliers in the dataset and decide whether to keep, remove, or handle them, explaining the rationale behind your decision.
+
+7. Performance Trends and Venue Impact:
+a. Compare team and individual performances across different matches and venues. Investigate if specific conditions like playing at a particular stadium or during certain stages of the tournament affect the outcomes.
+
+8. Player Spotlight:
+a. Focus on key players' performances, identifying who often wins the 'Player of the Match' and why. Assess the impact of top scorers and best bowlers on their teams' successes.
+
+9. Data Discovery:
+a. Summarize the previous questions analysis: Write down your findings, insights, and outcomes in clear, concise points. These summaries should be understandable to both technical and non-technical audiences and should include graphical support where relevant.
