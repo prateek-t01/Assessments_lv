@@ -1,0 +1,41 @@
+class HRAnalytics:
+    
+    eid = ""
+    ename = ""
+    esalgrade = ""
+    dept = ""
+
+    def __init__(self, eid, ename, esalgrade, dept):
+        
+        self.eid = eid
+        self.ename = ename
+        self.esalgrade = esalgrade
+        self.dept = dept
+
+    # Functions
+    def calculate_payroll(self):
+        pass  
+
+    def calculate_cpf(self):
+        pass  
+
+    def calculate_sick_leave(self):
+        pass  
+
+    def calculate_payroll_deduction(self):
+        pass  
+
+
+if __name__ == "__main__":
+    
+    hr_analytics = HRAnalytics("4385", "Prateek Tripathi", "Grade A", "DS")
+
+    print("Employee ID:", hr_analytics.eid)
+    print("Employee Name:", hr_analytics.ename)
+    print("Employee Salary Grade:", hr_analytics.esalgrade)
+    print("Employee Department:", hr_analytics.dept)
+
+    hr_analytics.calculate_payroll()
+    hr_analytics.calculate_cpf()
+    hr_analytics.calculate_sick_leave()
+    hr_analytics.calculate_payroll_deduction()
