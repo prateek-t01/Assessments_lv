@@ -1,0 +1,10 @@
+Hierarchical
+agglomerative Clustering - bottom up
+divisive clustering - top down
+dbscan
+Cluster profiling
+Anomaly detection
+Isolation forest
+time series introduction
+ARIMA
+Apical demo

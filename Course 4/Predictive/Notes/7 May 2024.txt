@@ -1,0 +1,11 @@
+Class imbalance, oversampling and undersampling
+KNN Classifier
+Decision Tree classifier: gini index and entropy
+hyperparameter tuning
+random undersampling/oversampling
+SMOTE
+knn imputation
+VIF for multicollinearity
+iterative imputation
+impurity criterion
+gridsearchcv

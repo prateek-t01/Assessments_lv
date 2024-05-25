@@ -1,0 +1,36 @@
+EDA
+Logistic regression
+random classifier
+sigmoid function
+loss function
+regularization
+under fitting
+over fitting
+bias variance
+elasticnet
+ridge regression - will keep minimum weight for unwanted features
+lasso regression - if feature is not important..it put weight = 0
+cross validation
+classification
+MLops
+sklearn
+k fold
+stratified k fold
+multi collinearity
+confusion matrix
+f1 score
+
+1 regression and 1 classification + MCQ and 2 descriptive
+
+
+sweetviz library for EDA
+
+linear and logistic regression
+onehotencoding
+minmaxscaler
+labelencoder
+
+
+
+
+

@@ -1,0 +1,3 @@
+bagging
+boosting
+stacking - use in capstone
