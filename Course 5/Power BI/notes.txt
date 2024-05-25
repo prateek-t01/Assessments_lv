@@ -1,0 +1,21 @@
+titles
+cards alined
+answers question through visuals using pages....go upto 3 pages
+3 4 visuals
+slicers
+visually appealing
+try to bring top 10 categories
+add qna
+try decompose
+try map
+when line chart
+scatter plot what
+how remove duplicates
+hoe remove errors
+drill through
+tooltip as a graph
+button
+page navigation
+adding bookmarks
+explore all options
+3 visuals on a dashboard add rest of it as bookmarks
