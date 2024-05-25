@@ -1,0 +1,76 @@
+-- ########################################################
+-- Scenario 1: **Rank Sales Transactions based on the Difference in Total Revenue Compared to the Average Total Revenue of the Previous 3 Sales:
+-- ########################################################
+
+WITH avg_revenue AS (
+    SELECT 
+        sale_id,
+        total_revenue,
+        AVG(total_revenue) OVER (ORDER BY sale_id ROWS BETWEEN 3 PRECEDING AND  CURRENT ROW) AS avg_prev_3_revenue
+    FROM 
+        sales
+)
+SELECT 
+    sale_id,
+    total_revenue,avg_prev_3_revenue,
+    CASE 
+        WHEN total_revenue > avg_prev_3_revenue THEN 'Above Average'
+        WHEN total_revenue < avg_prev_3_revenue THEN 'Below Average'
+        ELSE 'Equal to Average' 
+    END AS revenue_comparison
+FROM 
+    avg_revenue;
+
+
+-- ########################################################
+--  Scenario 2:   Need to find out the top supplier based on category 
+-- ########################################################
+-- ##
+-- ##  NOTE: Why does this query not return any data ?????
+-- ########################################################
+  
+WITH supplier_rank AS (
+    SELECT 
+        supplier,
+        category,
+        SUM(total_revenue) AS total_category_revenue,
+        RANK() OVER (PARTITION BY category ORDER BY SUM(total_revenue) DESC) AS supplier_rank
+    FROM 
+        sales
+    JOIN 
+        products USING (product_id)
+    GROUP BY 
+        supplier, category
+)
+SELECT 
+    supplier,
+    category,
+    total_category_revenue
+FROM 
+    supplier_rank
+WHERE supplier_rank = 1;
+
+
+-- ########################################################
+-- Scenario 3: **Distribution of Total Revenue Across Different Regions (High, Medium, Low Revenue Segments):**
+-- ########################################################
+
+WITH revenue_percentiles AS (
+    SELECT 
+        sale_id,
+        total_revenue,
+        NTILE(3) OVER (ORDER BY total_revenue) AS revenue_segment
+    FROM 
+        sales
+)
+SELECT 
+    sale_id,
+    total_revenue,
+    CASE 
+        WHEN revenue_segment = 1 THEN 'Low Revenue'
+        WHEN revenue_segment = 2 THEN 'Medium Revenue'
+        ELSE 'High Revenue'
+    END AS revenue_category
+FROM 
+    revenue_percentiles;
+

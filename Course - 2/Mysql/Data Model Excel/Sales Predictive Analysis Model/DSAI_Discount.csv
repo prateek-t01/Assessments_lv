@@ -1,0 +1,6 @@
+Discount_Code,Discount_Name,Created_DT,Created_User,Updated_DT,Updated_User,Discount_Type,Discount
+DC001,Discount Sale 1,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User,Amount,100
+DC002,Discount Sale 2,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User,Amount,100
+DC003,Discount Sale 3,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User,Amount,100
+DC004,Discount Sale 4,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User,Amount,100
+DC005,Discount Sale 5,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User,Amount,100

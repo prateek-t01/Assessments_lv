@@ -1,0 +1,21 @@
+Customer_ID,Customer_Name,Address,Location_Code,Phone,Email,Created_DT,Created_User,Updated_DT,Updated_User
+C000001,Sunil Raj,9 cross street.,L001,99789889933,sunilraj@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000002,Aaditya Jha,"15, Cherry Road",L002,9978044335,aaditya@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000003,Akhil Metha,"12, Prince Street",L003,9843577889,Akhil@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000004,Rishi Yadav,"11, Car street",L004,8765669087,rishiya@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000005,Anil Menon,"74, Gandhi road",L005,8767543423,anilmenon @gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000006,Rishikesh ,"34, New bus stand",L006,8909456576,kesh@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000007,Anjana,"35, Shivaji Steet",L007,8967453423,anj@rediffmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000008,Babita,"14, Cauveri road",L008,8070605040,Babi123@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000009,Barka,"34, dritya road, ",L009,6754897654,"Barka@gmail,com",2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000010,Moulya,"1, Aravind road",L010,4534231345,Moulya@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000011,Diya,"34, fountainhas",L011,7656463626,diya@yahoo.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000012,Trishika,"4, Sardar Market",L012,8010203040,Trishi@yahoo.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000013,Deepika,"9, Chowrasta, ",L013,8767777777,Deepi@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000014,Katrina,"67, Band Stand Promenede",L014,4232526272,Katrina@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000015,Hruthik,"45, Park strreet",L015,4555568888,Hruthik@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000016,Naveen,"76, Connaught Place",L016,7890679088,Naveen@yahoo.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000017,Aakash,"67, Hazratkanj",L017,9888888888,Aakash@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000018,Adheeran,"98, mall road",L018,9090949592,Adheeran@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000019,Deeshithan,"90, Rajpath",L019,9080706666,Deesh@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
+C000020,Rachel,"45, Tripolia Bazaar",L020,6756453768,Rachel@gmail.com,2024-01-23 10:00:00,DSAI User,2024-01-23 10:00:00,DSAI User
