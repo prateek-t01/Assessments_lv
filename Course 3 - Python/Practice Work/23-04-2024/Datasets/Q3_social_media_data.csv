@@ -1,0 +1,11 @@
+PostID,PostType,Likes,Shares,Comments
+1,Video,120,30,15
+2,Image,150,45,20
+3,Text,100,20,10
+4,Video,130,35,16
+5,Image,160,50,25
+6,Text,110,25,12
+7,Video,140,40,18
+8,Image,170,55,28
+9,Text,90,15,8
+10,Video,180,60,30
